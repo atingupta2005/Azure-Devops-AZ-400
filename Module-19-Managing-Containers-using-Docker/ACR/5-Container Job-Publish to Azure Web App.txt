@@ -1,7 +1,0 @@
-1. Create build pipeline - pipeline-container-azure-web-app.txt
-2. Modify pipeline code as needed
-3. Save and build
-4. Create release pipeline
-   - Create Azure Web app to release on
-5. Save and create release
-6. Check Azure Web app URL on browser

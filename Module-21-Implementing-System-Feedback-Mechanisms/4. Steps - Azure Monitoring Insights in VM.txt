@@ -1,4 +1,0 @@
-1. Open VM\Monitoring\Insights\Enable
-2. Wait for 20 minutes
-3. Open VM\Monitoring\Insights
-4. Review Performance Tab and Map Tab

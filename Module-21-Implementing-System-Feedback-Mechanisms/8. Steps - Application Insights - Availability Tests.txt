@@ -1,7 +1,0 @@
-1. Open resource insight\Availability
-2. Add Test, Test Type -> Ping Test
-3. Test Frequency -> 5 min
-4. Paste URL of any Azure Web App
-5. Access Web App from various locations
-6. Wait for 30 min
-7. Open resource insight\Availability and view report at bottom
