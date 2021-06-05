@@ -1,29 +1,12 @@
 # Lab: Managing technical debt with SonarCloud and Azure DevOps
 ## Lab overview
 
-In the context of Azure DevOps, the term *technical debt* represents suboptimal means of reaching tactical goals, which affect negatively the ability to reach strategic objectives in the area of software development and deployment. Technical debt affects productivity by making code hard to understand, prone to failures, time-consuming to change, and difficult to validate. Without proper oversight and management, technical debt can accumulate over time and significantly impact the overall quality of the software and the productivity of development teams in the longer term.
+- Technical debt affects productivity by making code hard to understand, prone to failures, time-consuming to change, and difficult to validate.
+- Without proper oversight and management, technical debt can accumulate over time and significantly impact the overall quality of the software and the productivity of development teams in the longer term.
 
-[SonarCloud](https://sonarcloud.io/){:target="\_blank"} is a cloud-based code quality and security service. The main features of SonarCloud include:
-
-- Support for 23 programming and scripting languages, including Java, JS, C#, C/C++, Objective-C, TypeScript, Python, ABAP, PLSQL and T-SQL.
-- Thousands of rules to track down hard-to-find bugs and quality issues based on powerful static code analyzers.
-- Cloud-based integrations with popular CI services, including Travis, Azure DevOps, BitBucket, and AppVeyor.
-- Deep code analysis for exploring all source files in branches and pull requests, helping reach a green Quality Gate and promote the build.
-- Speed and scalability.
+[SonarCloud](https://sonarcloud.io/){:target="\_blank"} is a cloud-based code quality and security service
 
 In this lab, you will learn how to integrate Azure DevOps Services with SonarCloud.
-
-## Objectives
-
-After you complete this lab, you will be able to:
-
-- Setup an Azure DevOps project and CI build to integrate with SonarCloud
-- Analyze SonarCloud reports
-- Integrate static analysis into the Azure DevOps pull request process
-
-## Lab duration
-
--   Estimated time: **30 minutes**
 
 ## Instructions
 
@@ -31,33 +14,17 @@ After you complete this lab, you will be able to:
 
 #### Set up an Azure DevOps organization.
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
-
-### Exercise 0: Configure the lab prerequisites
-
-In this exercise, you will set up the prerequisites for the lab, which consist of a team project based on the [Sonar Scanning Examples repository](https://github.com/SonarSource/sonar-scanning-examples.git).
-
 #### Task 1: Create the team project
 
-In this task, you will create a new Azure DevOps project based on the [Sonar Scanning Examples repository](https://github.com/SonarSource/sonar-scanning-examples.git) repository.
-
-1.  On your lab computer, start a web browser, navigate to the [**Azure DevOps portal**](https://dev.azure.com) and sign in to your Azure DevOps organization.
-1.  In the **Azure DevOps portal**, in the upper right corner, click **+ New project**.
-1.  On the **Create new project** pane, in the **Project name** textbox, type **SonarExamples**, in the **Visibility** section, click **Public**, and then click **Create**.
-
-    > **Note**: Unless you intend to sign up for a paid plan with SonarCloud, make sure that you set your Azure DevOps project to be public. If you *do* intend to sign up for a paid plan, then you can create a private project.
-
-1.  On the **SonarExamples** pane, in the vertical menu bar at the far left of the Azure DevOps portal, click **Repos**, on the **SonarExamples is empty. Add some code!** pane, and, in the **Import a repository** section, click **Import**.
-1.  On the **Import a Git repository** pane, ensure that **Git** appears in the **Repository type** dropdown list, in the **Clone URL**, type **https://github.com/SonarSource/sonar-scanning-examples.git**, and click **Import**.
-
-    > **Note**: The scanning examples repository contains sample projects for a number of build systems and languages including C# with MSBuild, and Maven and Gradle with Java.
+1.  Navigate to the [**Azure DevOps portal**](https://dev.azure.com)
+1.  Click **+ New project**.
+1.  **Project name** - **SonarExamples**, in the **Visibility** section, click **Public**, and then click **Create**.
+1.  Click **Repos**, in the **Import a repository** section, click **Import** - https://github.com/SonarSource/sonar-scanning-examples.git
 
 #### Task 2: Generate an Azure DevOps personal access token
 
-In this task, you will generate an Azure DevOps personal access token that will be used to authenticate from the Postman app you will install in the next task of this exercise.
-
-1.   On the lab computer, in the web browser window displaying the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
-1.   On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
+1.   In the upper right corner of the Azure DevOps page, click the **User settings** icon, click **Personal access tokens**, click **+ New Token**.
+1.   Click the **Show all scopes** link and, specify the following settings:
 
      | Setting | Value |
      | --- | --- |
@@ -66,48 +33,23 @@ In this task, you will generate an Azure DevOps personal access token that will 
      | Scope | **Code** |
      | Permissions | **Read & write** |
 
-1.   On the **Success** pane, copy the value of the personal access token to Clipboard.
-
-     > **Note**: Make sure you record the value of the token. You will not be able to retrieve it once you close this pane.
-
-1.   On the **Success** pane, click **Close**.
+1.   Copy the value of the personal access token
 
 #### Task 3: Install and configure the SonarCloud Azure DevOps extension
 
-In this task, you will install and configure the SonarCloud Azure DevOps extension in your Azure DevOps project.
-
-1.  On your lab computer, start a web browser, navigate to the [SonarCloud extension page](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud) on the Visual Studio Marketplace, click **Get it free**, ensure that the name of your Azure DevOps organization appears in the **Select an Azure Devops organization** dropdown list, and click **Install**.
-1.  Once the installation completes, click **Proceed to organization**. This will redirect the browser to the Azure DevOps portal displaying your organization's home page.
-
-    > **Note**: If you do not have the appropriate permissions to install an extension from the marketplace, a request will be sent to the account administrator to ask them to approve the installation.
-
-    > **Note**: The SonarCloud extension contains build tasks, build templates and a custom dashboard widget.
-
-1.  In the web browser window, navigate to the **SonarCloud home page** [https://sonarcloud.io/](https://sonarcloud.io/).
-1.  On the SonarCloud home page, click **Log in**.
-1.  On the **Log in or Sign up to SonarCloud**, click **With Azure DevOps**.
+1.  Navigate to the [SonarCloud extension page](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud), click **Get it free**, ensure that the name of your Azure DevOps organization appears in the **Select an Azure Devops organization** dropdown list, and click **Install**.
+1.  Once the installation completes, click **Proceed to organization**.
+1.  Navigate to the **SonarCloud home page** [https://sonarcloud.io/](https://sonarcloud.io/).
+1.  Click **Log in**.
+1.  Click **With Azure DevOps**.
 1.  When prompted whether to **Let this app access your info?**, click **Yes**.
-
-    > **Note**: In SonarCloud, you will create an organization and, within it, a new project. The organization and project you set up in SonarCloud will mirror the organization and project that you set up in Azure DevOps.
 
 1.  On the **Welcome to SonarCloud** page, click **Import project from Azure**.
 1.  On the **Create an organization** page, in the **Azure DevOps organization name** textbox, type the name of your Azure DevOps organization, in the **Personal Access Token** textbox, paste the value of the token you recorded in the previous exercise, and click **Continue**.
 1.  In the **Import organization settings** section, in the **Key** textbox, type a string of characters that will designate your organization and click **Continue**.
-
-    > **Note**: The key must be unique within the SonarCloud system. Make sure that the green checkmark appears to the right of the **Key** textbox. This indicates that the key satisfies the uniqueness prerequisite.
-
-1.  In the **Choose a plan** section, select the plan that you intend to use for this lab and click **Create Organization**.
-
-    > **Note**: You have now created the SonarCloud organization that mirrors your Azure DevOps organization.
-
-    > **Note**: Next, within the newly created organization, you will create a SonarCloud project that will mirror the Azure DevOps project **SonarExamples**.
-
-1.  On the **All set! Your organization is now ready to go** page, click **Analyze new project**.
 1.  On the **Analyze projects - Select repositories** page, in the list of Azure DevOps projects, select the checkbox next to the **SonarExamples / SonarExamples** entry and click **Set up**.
 1.  On the **Analyze your project** page, click **With Azure DevOps Pipeline** tile.
 1.  On the **Analyze with Azure Pipelines** page, in the **Install our extension** section, click **Continue**.
-
-    > **Note**: You can skip extension creation if you have already installed it.
 
 1.  On the **Analyze with Azure Pipelines** page, in the **Configure Azure Pipelines** section, click **.NET**. This will display a sequence of steps required to **Prepare Analysis Configuration**, **Run Code Analysis**, and **Publish Quality Gate Result**.
 

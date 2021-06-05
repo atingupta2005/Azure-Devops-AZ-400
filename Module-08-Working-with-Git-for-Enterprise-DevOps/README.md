@@ -62,6 +62,18 @@
 - Refresh Azure work items
 	- Note the status of work item is changed to closed.
 
+### Other Integration Features
+- Fixes AB#123
+	- Links and transitions the work item to the "done" state.
+- Adds a new feature, fixes AB#123
+	- Links and transitions the work item to the "done" state.
+- Fixes AB#123, AB#124, and AB#126
+	- Links to Azure Boards work items 123, 124, and 126. Transitions only the first item, 123 to the "done" state.
+- Fixes AB#123, Fixes AB#124, Fixes AB#125
+	- Links to Azure Boards work items 123, 124, and 126. Transitions all items to the "done" state.
+- Fixing multiple bugs: issue #123 and user story AB#234
+	- Links to GitHub issue 123 and Azure Boards work item 234. No transitions.
+
 
 ## Lab - Fork a repo
 - How to fork a GitHub repo
@@ -71,8 +83,8 @@
 - File Name - .git\hooks\pre-commit
 
 ```
-#!C:/Program\ Files/Git/usr/bin/sh.exe 
-matches=$(git diff-index --patch HEAD | grep '^+' | grep -Pi 'password|keyword2|keyword3')if [ ! -z "$matches" ]then  cat <<\EOTError: Words from the blacklist were present in the diff:EOT  echo $matches  exit 1fi 
+#!C:/Program\ Files/Git/usr/bin/sh.exe
+matches=$(git diff-index --patch HEAD | grep '^+' | grep -Pi 'password|keyword2|keyword3')if [ ! -z "$matches" ]then  cat <<\EOTError: Words from the blacklist were present in the diff:EOT  echo $matches  exit 1fi
 ```
 
 ## Lab - Githook
@@ -86,4 +98,3 @@ notepad fileA.txt
 git add *
 git commit -m "-"		# Will throw exception
 ```
-
