@@ -3,3 +3,5 @@
 **/*.xlsx
 **/*.pptx
 **/*.pdf
+Recycled/*
+**/Recycled/*

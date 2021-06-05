@@ -1,8 +1,0 @@
-Prometeus is for log collection like Azure Monitor
-
-1. Download https://github.com/prometheus-community/windows_exporter/releases/download/v0.14.0/windows_exporter-0.14.0-amd64.msi
-2. Install on the Azure VMs
-3. Open Port - 9182 on Azure VM
-4. Open Windows Defender Firewall with Advanced Security
-5. Inbound Rules\New Rule(Right Mouse Click)\Custom\All Programs\TCP\Specific Port-9182\Allow Connection
-6. Open URL - http://<vm_ip>:9182/metrics
