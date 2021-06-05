@@ -8,7 +8,7 @@ sudo apt-get remove -y docker docker-ce-cli docker-ce docker-engine docker.io co
 ## Install Docker
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+sudo sh get-docker.sh
 
 sudo usermod -aG docker $USER
 
@@ -64,8 +64,8 @@ FROM ubuntu
 MAINTAINER demousr@gmail.com
 
 RUN apt-get update
-RUN apt-get install –y nginx
-CMD [“echo”,”Image created”]
+RUN apt-get install -y nginx
+CMD ["echo","Image created"]
 ```
 
 ### Building Images: Running Docker Builds
