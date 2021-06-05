@@ -1,0 +1,3 @@
+Used in pipelines
+Build folder - $(build.artifactStagingDirectory)
+Default Working Directory - $(System.DefaultWorkigDirectory)

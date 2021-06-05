@@ -1,0 +1,17 @@
+To use Azure Build Pipelines to deploy the image as container to AKS
+
+1. Open the AKS cluster
+2. Delete the service and the workload
+3. Open Azure Repo - docker-repo and upload app.yaml (aks_app.yaml) and service.yaml (aks_service.yaml) files
+4. Build Pipeline will be run automaticall. But we don't need it. Let's cancel it.
+5. Edit existing pipeline of docker-repo to add 2 more tasks to it
+    - Task1: CopyFiles (app.yaml, service.yaml) to build machine
+    - Task2: KubernetesManifest: Allows to deploy those YAML files
+7. Create a service connection to connect to AKS
+8. Open Project Settings\Service Connection\New Service Connection
+9. Chose Kuberneties
+10. Chose Azure Subscription and select existing AKS cluster
+11. Service COnnection Name - cluster-connection
+12. Save and Cancel the build
+13. Change in Source Code - Pages\Index file - "Welcome to Azure Pipelines- Kubernetes"
+14. Take the IP address of AKS\Service and open in browser

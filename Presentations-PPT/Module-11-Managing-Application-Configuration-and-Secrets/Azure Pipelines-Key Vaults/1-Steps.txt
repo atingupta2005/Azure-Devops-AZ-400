@@ -1,0 +1,16 @@
+1. Create new release pipeline named - "vm-key-vault"
+2. Add new Kay Vault task in the job
+3. Create Azure Keyvault and add a secret named vmpassword and store vm password in it - Azure@123456
+4. Configure the Key Vault task. Secret filter- vmpassword
+5. Add another task - Azure CLI
+6. Configure task - Script Type - Shell, Use Inline Script, Paste command:
+   - az vm create --resource-group az400 --name demovm1 --image win2016datacenter --admin-username atingupta2005 --admin-password $(vmpassword)
+7. Add access policy in Key Vault -> Left Menu -> Access Policies
+   - Open Devops Project Settings\Service Connections
+   - Click Manage Service Principle \ Copy ID from header
+   - Add access policy in key vault
+   - Select Service principle\Paste id
+   - Select Get and List permission
+   - Click Save
+8. Save Azure Pipleine and Create Release
+9. Inspect if VM is created

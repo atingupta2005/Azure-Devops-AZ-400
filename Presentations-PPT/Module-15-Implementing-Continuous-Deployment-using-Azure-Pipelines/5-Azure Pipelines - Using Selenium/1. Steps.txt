@@ -1,0 +1,21 @@
+To run Selenium test cases from Azure Pipelines
+
+1. Create a new Repo- seleniumtest
+2. Upload project to repo
+3. Create Build Pipeline
+4. Replace the code with - pipeline.txt
+5. Create release pipeline
+6. Start with Empty job
+7. Add stage name - UI testing
+8. Pipeline name - selenium testing
+9. Add artifact from build pipeline
+10. Add task to UI Testing Job and change agent specification to use Windows 2019
+11. Add task - Visual Studio test Platform Installer
+12. Add another task - Visual Studio Test
+13. Configure task Visual Studio Test
+    - Specify test file - **\seleniumtest.dll and remove everything else
+    - Specify Search folder - <>\_seleniumtest\drop
+14. Enable trigger - Continous Integration
+15. Save and release pipeline
+16. Now simulate a faulire by changing the test case in UnitTest.cs
+17. Now out build and release pipeline will be triggered and it will fail.

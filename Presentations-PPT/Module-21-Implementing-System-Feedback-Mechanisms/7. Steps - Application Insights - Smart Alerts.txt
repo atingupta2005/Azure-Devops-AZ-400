@@ -1,0 +1,5 @@
+Smart Detection
+1. Open resource insight\Smart Detection
+
+Continuous Export
+1. Open resource insight\Continuous Export

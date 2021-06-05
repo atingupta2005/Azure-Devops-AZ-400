@@ -1,0 +1,23 @@
+To create self hosted agent, we will use our cloud machine
+
+1. Install necessary softwares on our cloud machine
+2. Open Project\Settings\Agent Pools\Default
+3. Create New Agent
+4. Download agent and extract it
+5. Open Powershell and run ./config.cmd
+6. Server URL - https://dev.azure.com/girjeshgupta2005
+7. Create a new token from User Setting\Personal Access Token. Access -> Agent Pool: Read and Manage
+8. Run agent as a service -> Yes
+9. Excecute .\run.cmd
+
+Implementation:
+1. Edit an existing pipeline
+2. Change name of pool - default. and agent name - <agent name>
+pool:
+  name: 'Default'
+  vmImage: 'vmVS2019'
+
+3. Save and run pipeline
+4. Allow permissions
+5. After Job is executed refer the folder:
+   \vsts-agent-win-x64-2.177.1\_work

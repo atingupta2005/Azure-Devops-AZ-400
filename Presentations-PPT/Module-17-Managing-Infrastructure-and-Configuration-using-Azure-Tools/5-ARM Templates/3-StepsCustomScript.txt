@@ -1,0 +1,5 @@
+1. Connect to Azure Cloud Shell
+2. Create Storage Account(First Time)
+3. Upload install.sh, main_cs.json and parameters_cs.json to Cloud Shell
+4. az deployment group create --resource-group az400 --template-file main_cs.json --parameters parameters_cs.json
+5. Wait for 5 min and inspect if VM is created

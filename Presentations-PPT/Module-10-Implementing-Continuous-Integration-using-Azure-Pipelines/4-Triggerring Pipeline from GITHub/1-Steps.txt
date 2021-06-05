@@ -1,0 +1,17 @@
+Repo Name - pipelie
+
+Create a new github repo - pipeline
+Create a simple ASP dot net core app in Visual Studio
+Push code to Github
+Create a new pipeline
+Pickup code from github
+Chose Github Repo
+Approve and Install Azure pipelines in github
+Remove the Test related steps from pipeline code
+Also change the trigrer branch  in pipeline code if required
+Run the pipeline
+
+
+Specify the master branch name in the pipeline trigger section
+Do changes in Source code and commit to azure repo
+Notice that pipeline has been triggered automatically

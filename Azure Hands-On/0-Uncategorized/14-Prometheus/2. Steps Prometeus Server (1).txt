@@ -1,0 +1,25 @@
+Use the below commands to install the Prometheus server component
+
+// First make a new directory
+mkdir prometheus
+
+// Next go ahead and download the Prometheus server component
+Invoke-WebRequest "https://github.com/prometheus/prometheus/releases/download/v2.22.0/prometheus-2.22.0.windows-amd64.tar.gz" -OutFile C:\prometheus\prometheus-2.22.0.windows-amd64.tar.gz
+
+// Unzip the contents
+tar xvfz prometheus-2.22.0.windows-amd64.tar.gz
+
+// Go onto the directory
+cd .\prometheus-2.22.0.windows-amd64\
+
+// Then execute the server component
+.\prometheus.exe
+
+Open Port 9090 and 9182 in Azure Portal
+
+Open Firewall Rule for Port 9090 and 9182
+
+Open http://<vm_ip>:9182/metrics
+
+Open http://<vm_ip>:9090/graph
+

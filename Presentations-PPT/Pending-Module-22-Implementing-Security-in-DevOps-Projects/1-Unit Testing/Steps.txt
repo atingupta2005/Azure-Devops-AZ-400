@@ -1,0 +1,6 @@
+1. Setup project testing-project.zip in Visual Studio
+2. Run Test -> All Tests
+3. Create Azure Repo and push Code to Azure Repo
+4. Create a pipeline and use the pipeline code from -> 1-PipelineCode.txt
+5. Run the pipeline
+6. Inspect test results in the Job

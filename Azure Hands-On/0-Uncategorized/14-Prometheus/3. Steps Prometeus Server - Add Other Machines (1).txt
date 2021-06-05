@@ -1,0 +1,10 @@
+Now as the Prometheus server is only collecting logs from localhost, we need to connect it to other VMs also
+
+1. RDP to Prometheus Server
+2. Open C:\Prometheus folder
+3. Open prometheus.yml file 
+4. Change target in the last line
+5. Stop the Prometheus Server and start again
+6. Open the Prometheus Server URL
+7. Open Status\Configuration and notice the changes
+8. Query data to see the logs

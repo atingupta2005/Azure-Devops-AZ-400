@@ -1,0 +1,9 @@
+1. Create Azure Container Registry using Azure Portal
+2. Run the commands specified in file - commands_1.txt after replacing registry name
+3. Open Azure Portal\Container Registry\My ACR\Registeries and Refresh
+4. Open ACR\Access Keys and enable Admin user option
+5. Create Azure Resource - Azure Container Instance. Chose Image Source -> ACR
+6. Chose ACR, Image and tag
+7. Networking Tab -> Public, Port 80
+8. Grab Public IP of ACI and open on browser
+9. Open ACI\Containers. Inspect Logs and click on connect

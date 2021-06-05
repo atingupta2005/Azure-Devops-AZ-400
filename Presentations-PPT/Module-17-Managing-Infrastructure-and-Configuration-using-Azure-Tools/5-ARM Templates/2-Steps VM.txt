@@ -1,0 +1,14 @@
+----Via Portal---
+1. Create Template Deployment in Azure\Build your own template
+2. Paste code from main.json
+3. Save
+4. Specify parameters
+5. Create VM
+
+
+---Via Azure Cloud Shell-----
+1. Connect to Azure Cloud Shell
+2. Create Storage Account(First Time)
+3. Upload main.json and parameters.json to Cloud Shell
+4. az deployment group create --resource-group az400 --template-file main.json --parameters parameters.json
+5. Wait for 5 min and inspect if VM is created

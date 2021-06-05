@@ -1,0 +1,3 @@
+Refer:
+ - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml
+

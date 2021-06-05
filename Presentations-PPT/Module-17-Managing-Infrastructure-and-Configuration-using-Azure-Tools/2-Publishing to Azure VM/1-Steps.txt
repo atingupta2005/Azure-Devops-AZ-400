@@ -1,0 +1,18 @@
+1. Create a VM - Windows Server 2019 and Allow Port 80
+2. Connect to VM
+3. Open Server Manager
+4. Click Add Roles and Features
+5. Select Server Roles - Web Server (IIS)
+6. Make sure to enable Management service in "Role Service"
+7. Open Tools->Internet Information Services
+8. Enable Remote Connections
+9. Apply and Start
+10. Open Port -> 8172, 80, 8080
+11. Disable IE Advanced Secirity from Management Server -> Local Server -> IE Enhanced Security Configuration
+12. Download and install .Net Core 3.1\Hosting Bundle for Windows
+13. Download and Install Web Deploy 3.6\Complete Installation
+14. Configure DNS of VM from Azure Portal
+15. Publish ASP.Net Core Web app from Visual Studio -> Azure Virtual Machines
+16. Click Create Profile\Edit\Enter password of VM->Validate\Save
+17. Publish
+18. Inspect the URL

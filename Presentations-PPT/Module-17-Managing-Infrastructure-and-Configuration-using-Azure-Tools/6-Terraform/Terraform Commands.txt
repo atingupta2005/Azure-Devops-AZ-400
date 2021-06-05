@@ -1,0 +1,19 @@
+In Azure Cloud shell you can execute the following commands
+
+// See the current terraform version
+
+terraform --version
+
+// Initialize the terraform configuration
+
+terraform init
+
+// Create the terraform plan
+
+terraform plan -out storage.tfplan
+
+//Apply the terraform plan
+
+terraform apply "storage.tfplan"
+
+Fullscreen
