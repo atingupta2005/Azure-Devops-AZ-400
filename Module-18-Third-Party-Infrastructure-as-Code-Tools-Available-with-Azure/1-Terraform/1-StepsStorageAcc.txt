@@ -1,9 +1,0 @@
-1. Download Terraform or use Azure Cloud Shell
-2. Get Subscription ID from the resource
-3. Get Tenant ID from Azure AD
-4. Update Subscription ID and Tenant ID in the .tf files
-5. Upload 1-StorageAcc.tf to Cloud Shell
-6. run terraform commands as specified in Terraform Commands.txt
-7. Inspect if storage account is created.
-8. Do minor changes in tf file and again apply it.
-9. Notice the changes are done in azure portal resource.

@@ -5,7 +5,7 @@
         "applanName": {
             "type": "string",
             "minLength": 1,
-         "defaultValue": "demoplan1000"
+         "defaultValue": "demoplan10006121982"
         },
         "applanSKU": {
             "type": "string",

@@ -1,8 +1,0 @@
-1. Create Azure Web App - Run time stack - .Net Core 3.1
-2. Change App Service plan - standard
-3. Create Web App
-4. Open Webapp and grab the URL and test on browser
-5. Create ASP.Net Core Web App in Visual Studio
-6. Publish to Azure -> Rish click on Project in Solution Explorer
-7. App Service\Chose Existing
-8. Check on the browser after refresh
