@@ -1,0 +1,21 @@
+1. Create two web Apps - productionwebapp1000, stagingwebapp1000
+2. Create ASP Dot Net Core Wep App in Visual Studio
+3. Change index file - "This the the production version1"
+4. Publish to Azure Web App - productionwebapp1000
+5. Inspect the URL
+6. Change index file - "This the the production version1"
+7. Publish and create new profile
+8. Publish to stagingwebapp1000
+9. Inspect the URL
+10. Create Traffic Manager
+11. Routing method - Priority
+12. Open Traffic Manager Resource\Endpoints
+13. Add both the end points - production priority is 1 and staging with priority - 2
+14. Open Traffic Manager Resource\Configuration
+15. Protocol - HTTPS, Port -443
+16. Save
+17. Check Overview and wait till Monitoring Status is complete
+18. Take DNS name of Traffic Manger Resource and open on browser
+19. Stop Production Web App
+20. Take DNS name of Traffic Manger Resource and open on browser
+21. It would show from staging web app

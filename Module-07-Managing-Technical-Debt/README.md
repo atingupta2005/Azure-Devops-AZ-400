@@ -156,37 +156,12 @@ steps:
 1.  On the **Extensions** tab, click the **Detailed SonarCloud report**. This will automatically open a new browser tab displaying the report on your SonarCloud project page.
 1.  Verify that the report now includes the Quality Gate result.
 
-### Exercise 3: Implement Azure DevOps pull request integration with SonarCloud
+#### Task 4: Modify code and add unused functions
+1. In the central pane, in the folder hierarchy, navigate to the file Program.cs in the sonarqube-scanner-msbuild\CSharpProject\SomeConsoleApplication\Program.cs folder and click Edit.
+1. On the Program.cs pane, add the following empty method to the code directly above the line public static bool AlwaysReturnsTrue()
+```
+public void Unused(){
 
-In this exercise, you will set up pull request integration between Azure DevOps and SonarCloud.
-
-> **Note**: In order to configure SonarCloud analysis to perform analysis of code included in an Azure DevOps pull request, you need to perform the following tasks:
-
-- Add an Azure DevOps personal access token to a SonarCloud project, which authorizes its access to pull requests.
-- Configure an Azure DevOps branch policy that controls a pull request-triggered build
-
-#### Task 1: Create an Azure DevOps personal access token for pull request integration with SonarCloud
-
-In this task, you will review the personal access token requirements for implementing Azure DevOps pull request integration with a SonarCloud project.
-
-1.  Copy PAT we created earlier or create a new one
-
-#### Task 2: Configure pull request integration in SonarCloud
-
-1.  Open SonarCloud project - **SonarExamples**
-1.  On the project's dashboard page, click the header of the **Administration** tab and, in the dropdown menu, click **General Settings**.
-1.  On the **General Settings** page, click **Pull Requests**.
-1.  In the **General** section of the **Pull Requests** settings, in the **Provider** dropdown list, select **Azure DevOps Services** and click **Save**.
-1.  In the **Integration with Azure DevOps Services** section of the **Pull Requests** settings, in the **Personal access token** textbox, paste the previously generated Azure DevOps personal access token and click **Save**
-
-#### Task 3: Configure a branch policy for integration with SonarCloud
-
-In this task, you will configure an Azure DevOps branch policy for integration with SonarCloud.
-
-1.  Switch to the web browser window displaying the **SonarExamples** project in the Azure DevOps portal.
-1.  In the **Repos** section, click **Branches**.
-1.  In **master** click **Branch policies**.
-1.  On the **master** pane, to the right of the **Build Validation** section, click **+**.
-1.  Select the pipeline you created earlier in this task, in the **Display name** textbox, type **SonarCloud analysis** and click **Save**.
-
-    > **Note**: Azure DevOps is now configured to trigger a SonarCloud analysis when any pull request targeting the **master** branch is created.
+}
+```
+1. Pipeline will trigger automatically and SonarCloud will validate the code.

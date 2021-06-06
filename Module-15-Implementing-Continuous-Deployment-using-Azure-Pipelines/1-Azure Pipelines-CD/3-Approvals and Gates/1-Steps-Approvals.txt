@@ -1,0 +1,8 @@
+1. Edit multi stage release pipeline
+2. Edit Production stage and add predeployment condition (Mouse hover on the Prod stage)
+3. Turn On Pre Deployment Approvals
+4. Specify the approver name - myself
+5. Timeout - 2 hours (If noone gives approval, deployment will not be done)
+6. Save and "Create Release"
+7. Edit source code and Commit
+8. Wait for another release and you need to give approval

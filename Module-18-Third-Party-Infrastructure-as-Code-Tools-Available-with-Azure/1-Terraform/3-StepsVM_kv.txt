@@ -1,0 +1,11 @@
+1. Download Terraform or use Azure Cloud Shell
+2. Get Subscription ID from the resource
+3. Get Tenant ID from Azure AD
+4. Update 
+   - Subscription ID and 
+   - Tenant ID in the .tf files 
+   - Storage account details
+   - Key Vault details
+5. Upload 3-machine_kv.tf to Cloud Shell
+6. run terraform commands as specified in Terraform Commands.txt
+7. Inspect if VM is created

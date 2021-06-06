@@ -1,0 +1,27 @@
+1. Open Azure Web App and delete staging slot
+2. Create a new build pipeline and remove the last test step
+3. Add new task in last - Publish Build Artifacts
+4. Save and Run
+5. Create Release pipeline and chose empty job
+6. Add the artifact
+7. Give a name to pipeline - web-app slot
+8. Enable Continuous Deployment trigger
+9. Give a name to Stage - Pre-Production
+10. Add task to the stage
+11. Set Agent specification to vs2017-win2016
+12. Add task - Azure CLI
+13. Add task - Azure App Service Deploy
+14. Configure task - Azure CLI - Powershell Script, inline script
+    - az webapp deployment slot create --name slotapp1000 --resource-group az400 --slot staging
+15. Configure task - Azure App Service Deploy
+16. Type slot name - staging
+17. Save
+18. Add new stage with Empty Job and name it Production
+19. Add Post-Deployment condition to "Pre-Production"\Post Deployment Approval\Select approver
+20. Open Production stage and add a task - Azure App Service manage
+21. Chose Action - Swap Slots
+22. Source slot - staging
+23. Enable - Swap with Production
+24. Save and Create Release
+25. Do code changes - Will be published to staging slot
+26. Do approval in pipeline and it will then be released to Prod

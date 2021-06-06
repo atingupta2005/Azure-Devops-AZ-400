@@ -11,7 +11,8 @@
    - az vm create --resource-group az400 --name demovm1 --image win2016datacenter --admin-username atingupta2005 --admin-password $(vmpassword)
 - Add access policy in Key Vault -> Left Menu -> Access Policies
    - Open Devops Project Settings\Service Connections
-   - Click Manage Service Principle \ Copy ID from header
+   - Choose + New service connection and select Azure Resource Manager
+   - Open the service connection created and Click Manage Service Principle \ Copy APP ID
    - Add access policy in key vault
    - Select Service principle\Paste id
    - Select Get and List permission
