@@ -1,0 +1,27 @@
+// See the events generated in the last 12h , order by the TimeGenerated attribute and then see the count of events
+
+Event | where TimeGenerated > ago(12h)
+
+| order by TimeGenerated desc
+
+| summarize count() by Computer
+
+// makelist is used to pivot data by the order of values in a particular column.
+
+Event
+
+| where TimeGenerated > ago(12h)
+
+| order by TimeGenerated desc
+
+| summarize makelist(EventID) by Computer
+
+// makeset can be used to create a list on distinct values
+
+Event
+
+| where TimeGenerated > ago(12h)
+
+| order by TimeGenerated desc
+
+| summarize makeset(EventID) by Computer

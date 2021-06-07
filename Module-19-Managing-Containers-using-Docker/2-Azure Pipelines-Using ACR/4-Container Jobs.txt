@@ -1,0 +1,7 @@
+To use Containers to have different build/release environment
+Benefitial if the code of application is dependent on diferent programming languages
+
+1. Create a build pipeline
+2. Modify it - code from pipeline-container.txt
+3. Save and run
+4. Inspect Job logs

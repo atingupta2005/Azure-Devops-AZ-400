@@ -1,0 +1,7 @@
+1. Create a Ubuntu VM with port 80 opened
+2. Setup Docker using - https://docs.google.com/document/d/1RH63K8F4b4Gyjgpkd4NihI1CYlViDM_GjG8tbe9wXs4/edit
+3. docker pull nginx
+4. docker run --name sampleapp -p 80:80 -d nginx
+5. Visit public IP and view home page from nginx
+6. docker ps
+7. docker container stop sampleapp

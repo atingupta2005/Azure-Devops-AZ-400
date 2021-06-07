@@ -1,0 +1,11 @@
+Use ACR tasks instead of Docker Commands
+If base image is modified then acr tasks helps to update custom image
+
+1. Login to Linux VM having Docker installed
+2. az login
+3. az acr login --name <acrregistyname>
+4. docker images
+5. Move to the directory which contains Dockerfile
+6. az acr build --image appnew:latest --registry <acrregistryname> --file Dockerfile .
+7. Refere ACR Registry on Azure Portal to make sure that image is pushed
+

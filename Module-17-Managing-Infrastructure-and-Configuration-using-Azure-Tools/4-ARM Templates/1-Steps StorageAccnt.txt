@@ -1,0 +1,7 @@
+1. Create Template Deployment in Azure\Build your own template
+2. Add Resource\Storage Account
+3. Save
+4. Specify Parameters
+5. Review + Create
+6. Create
+7. Inspect if Storage account is created
