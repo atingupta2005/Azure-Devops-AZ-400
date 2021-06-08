@@ -46,10 +46,11 @@ ls /app
 ### Build Pipelines - Build using Container
 - To use Containers to have different build/release environment
 
-1. Create a build pipeline
-1. Modify it - code from [pipeline-container.txt](pipeline-container.txt)
-1. Save and run
-1. Inspect Job logs
+- Steps
+  1. Create a build pipeline
+  1. Modify it - code from [pipeline-container.txt](pipeline-container.txt)
+  1. Save and run
+  1. Inspect Job logs
 
 
 ### Build Pipelines - Publish Artifacts
@@ -68,8 +69,9 @@ ls /app
 ### Understand how to manually publish Docker Image to ACR
 - In previous steps we used Docker commands in the Build Pipeline to Build artifacts
 - Now let's use ACR tasks to package our build artifacts to Docker Image
-1. Login to Linux VM having Docker installed
-2. Run below commands
+- Steps
+  1. Login to Linux VM having Docker installed
+  2. Run below commands
 ```
 az login
 az acr login --name appregistry1000atin
@@ -90,18 +92,19 @@ az acr build --image appnew:latest --registry appregistry1000atin --file Dockerf
 - Then deploy that docker image to ACR using pipeline
 - We need to build multistage [Dockerfile](Dockerfile) so that the DotNet code can be built first from the source code
 
-1. For the Dockerfile, put the content (from [Dockerfile](Dockerfile)) in a file - Dockerfile
-1. Place Dockerfile as part of your code or upload it to your Azure Repos - Git repository
-  - https://github.com/atingupta2005/core-web-app-docker.git
-1. Create a new Azure Repo by importing from GitHub - core-web-app-docker
-  - https://github.com/atingupta2005/core-web-app-docker.git
-1. Open ACR and remove Repositories from it if any
-1. Also stop the ACI if any in Azure Portal
-1. Create a new build pipeline using azure repo - core-web-app-docker
-1. Now we need to add a new task in the pipeline script in the last. using below steps
-  1. Chose task - Docker (Build and Push an image to ACR), Image name: dotnetapp
-  1. In pipeline code change the tag to latest
-1. Save and Run
-1. Visit ACR\Repositories and refresh to view the newly pushed docker image
-1. Open ACI and start it. It will now take the latest image
-1. Grab public ip of ACI and open in browser
+- Steps
+  1. For the Dockerfile, put the content (from [Dockerfile](Dockerfile)) in a file - Dockerfile
+  1. Place Dockerfile as part of your code or upload it to your Azure Repos - Git repository
+    - https://github.com/atingupta2005/core-web-app-docker.git
+  1. Create a new Azure Repo by importing from GitHub - core-web-app-docker
+    - https://github.com/atingupta2005/core-web-app-docker.git
+  1. Open ACR and remove Repositories from it if any
+  1. Also stop the ACI if any in Azure Portal
+  1. Create a new build pipeline using azure repo - core-web-app-docker
+  1. Now we need to add a new task in the pipeline script in the last. using below steps
+    1. Chose task - Docker (Build and Push an image to ACR), Image name: dotnetapp
+    1. In pipeline code change the tag to latest
+  1. Save and Run
+  1. Visit ACR\Repositories and refresh to view the newly pushed docker image
+  1. Open ACI and start it. It will now take the latest image
+  1. Grab public ip of ACI and open in browser
