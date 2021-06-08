@@ -1,3 +1,5 @@
+# Slack Integration
+
 1. Visit Slack.com and create account \ Try for free
 2. Create Workspace
 3. Add Channel if required

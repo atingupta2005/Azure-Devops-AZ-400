@@ -26,9 +26,6 @@
 
 - Module-16-Implementing-an-Appropriate-Deployment-Pattern
     - https://github.com/atingupta2005/Azure-Devops-AZ-400/blob/master/Module-16-Implementing-an-Appropriate-Deployment-Pattern/11-Azure%20Deployment%20Slots/2-Steps%20-%20with%20Azure%20Pipelines.txt
-- Module-17-Managing-Infrastructure-and-Configuration-using-Azure-Tools
-  - Need to test
-    - Publishing to Azure VM not working. Need to read from Niel
 - Module-18-Third-Party-Infrastructure-as-Code-Tools-Available-with-Azure
   - Need to test
 - Module-19-Managing-Containers-using-Docker
