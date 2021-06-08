@@ -5,8 +5,6 @@
 
 - SSH to the machine using putty
 ```
-sudo yum update -y
-
 # Install Python 3 and pip.
 sudo yum install -y python3-pip
 
@@ -31,16 +29,16 @@ az ad sp create-for-rbac --name vmAnsibleSP
 
 - Note the output. Below is the sample output
 ```
-	{
-	  "appId": "2b42552b-f95e-4f1d-acdb-9eb9d4c03977",
-	  "displayName": "vmAnsibleSP",
-	  "name": "http://vmAnsibleSP",
-	  "password": "R0kHP3Zcn5l4~KFCoAqCKYyXLhZ1iD~PFm",
-	  "tenant": "6bb2f9af-a0af-4c32-a5ec-5f7011d37551"
-	}
+{
+  "appId": "2b42552b-f95e-4f1d-acdb-9eb9d4c03977",
+  "displayName": "vmAnsibleSP",
+  "name": "http://vmAnsibleSP",
+  "password": "zXf.bqh~x0SeAIgARtVG._7TC7id7gyGpN",
+  "tenant": "6bb2f9af-a0af-4c32-a5ec-5f7011d37551"
+}
 ```
 
-- Test if able to login to centos vm using private key
+- Using Cloud shell Test if able to login to centos vm using private key
 ```
 ssh -i /home/atin/.ssh/ansible_rsa azureuser@<IP of CentOS VM>
 
@@ -56,13 +54,13 @@ nano ~/.azure/credentials
 [default]
 subscription_id=f536ca6e-c029-40e8-855e-81d14333f205
 client_id=2b42552b-f95e-4f1d-acdb-9eb9d4c03977
-secret=R0kHP3Zcn5l4~KFCoAqCKYyXLhZ1iD~PFm
+secret=zXf.bqh~x0SeAIgARtVG._7TC7id7gyGpN
 tenant=6bb2f9af-a0af-4c32-a5ec-5f7011d37551
 ```
 
 - We can either export the environment variables
 ```
-export AZURE_SUBSCRIPTION_ID=f536ca6e-c029-40e8-855e-81d14333f205
+export AZURE_SUBSCRIPTION_ID=f59f28f7-7564-45a5-afab-ee85b854d725
 export AZURE_CLIENT_ID=2b42552b-f95e-4f1d-acdb-9eb9d4c03977
 export AZURE_SECRET=R0kHP3Zcn5l4~KFCoAqCKYyXLhZ1iD~PFm
 export AZURE_TENANT=6bb2f9af-a0af-4c32-a5ec-5f7011d37551
@@ -93,7 +91,7 @@ ansible-playbook create_rg.yml --extra-vars "name=atintestrgansible location=eas
 
 - Create ansible playbook to delete the resource group
 ```
-vim delete_rg.yml
+nano delete_rg.yml
 ```
 
 ```
