@@ -82,24 +82,25 @@ docker images
 az acr build --image appnew:latest --registry appregistry1000atin --file Dockerfile .
 ```
 
-1. Refere ACR Registry on Azure Portal to make sure that image is pushed
+1. Refere ACR Registry - "appregistry1000atin" on Azure Portal to make sure that image is pushed
 
-## 7-Azure Pipelines - Publish to ACR
+## Azure Pipelines with ACR
+### Publish to ACR
 - We need to build Docker image using pipeline
 - Then deploy that docker image to ACR using pipeline
-- We need to build multistage Dockerfile so that the DotNet code can be built first from the source code
+- We need to build multistage [Dockerfile](Dockerfile) so that the DotNet code can be built first from the source code
 
-1. For the Dockerfile, put the content (from [ACR_Dockerfile.txt](ACR_Dockerfile.txt)) in a file - Dockerfile
+1. For the Dockerfile, put the content (from [Dockerfile](Dockerfile)) in a file - Dockerfile
 1. Place Dockerfile as part of your code or upload it to your Azure Repos - Git repository
-1. Create a new Azure Repo - docker-repo
-1. Create a new ASP.Net Core Web App and place Docker file in root folder
-1. Change Index page - Welcome to Azure Pipelines - Docker
-1. Push code from VSCode to Azure Repo
+  - https://github.com/atingupta2005/core-web-app-docker.git
+1. Create a new Azure Repo by importing from GitHub - core-web-app-docker
+  - https://github.com/atingupta2005/core-web-app-docker.git
 1. Open ACR and remove Repositories from it if any
 1. Also stop the ACI if any in Azure Portal
-1. Create a new build pipeline
-1. Chose task - Docker (Build and Push an image to ACR), Image name: dotnetapp
-1. In pipeline code change the tag to latest
+1. Create a new build pipeline using azure repo - core-web-app-docker
+1. Now we need to add a new task in the pipeline script in the last. using below steps
+  1. Chose task - Docker (Build and Push an image to ACR), Image name: dotnetapp
+  1. In pipeline code change the tag to latest
 1. Save and Run
 1. Visit ACR\Repositories and refresh to view the newly pushed docker image
 1. Open ACI and start it. It will now take the latest image
