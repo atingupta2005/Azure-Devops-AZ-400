@@ -11,15 +11,30 @@ terraform version
 1. Visit Azure Portal
   1. Get Subscription ID from the resource
   1. Get Tenant ID from Azure AD
-  1. Update Subscription ID and Tenant ID in the .tf files
+
+
+## Setup Storage Account via Terraform
 1. run terraform commands as specified below:
 ```
 mkdir storage-account
 cd storage-account
-wget <url-of-tf-file-on-git>
+wget https://raw.githubusercontent.com/atingupta2005/Azure-Devops-AZ-400/master/Module-18-Third-Party-Infrastructure-as-Code-Tools-Available-with-Azure/1-Terraform/1-StorageAcc.tf
+// Update Subscription ID and tanent id
+nano 1-StorageAcc.tf
 terraform init
-terraform plan -out storage.tfplan
-terraform apply "storage.tfplan"
+terraform apply
 cd ..
 ```
 1. Inspect if storage account is created on Azure Portal
+
+## Setup VM via Terraform
+```
+mkdir vm
+cd vm
+wget https://raw.githubusercontent.com/atingupta2005/Azure-Devops-AZ-400/master/Module-18-Third-Party-Infrastructure-as-Code-Tools-Available-with-Azure/1-Terraform/2-machine.tf
+// Update Subscription ID and tanent id
+nano 2-machine.tf
+terraform init
+terraform apply
+cd ..
+```
