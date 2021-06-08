@@ -3,20 +3,15 @@
 ## Optional Steps:
 1. Create Dot Net Core Web App in Visual Studio
 1. Edit content of index page - "Welcome to docker"
-1. Open project folder in command prompt
+1. Open project folder in command prompt and run below commands
 ```
 cd "C:\Users\atingupta2005\source\repos\core-web-app-docker\core-web-app-docker"
-```
-1. run - dotnet publish
-```
 dotnet publish
-```
-1. cd <project dir>\bin\debug\netcoreapp3.1\publish
-```
 cd "C:\Users\atingupta2005\source\repos\core-web-app-docker\core-web-app-docker\bin\debug\netcoreapp3.1\publish"
 dir
 ```
-1. Copy the published folder to linux vm
+
+- Copy the published folder to linux vm which has Docker installed
 
 - Note: We have zipped the published folder and copied to GitHub. We will directly downoad it on Linux VM. Follow below steps for the same
 
