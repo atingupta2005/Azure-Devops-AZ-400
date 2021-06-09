@@ -1,21 +1,8 @@
 # Dockerize Dot Net app
 
-## Optional Steps:
-1. Create Dot Net Core Web App in Visual Studio
-1. Edit content of index page - "Welcome to docker"
-1. Open project folder in command prompt and run below commands
-```
-cd "C:\Users\atingupta2005\source\repos\core-web-app-docker\core-web-app-docker"
-dotnet publish
-cd "C:\Users\atingupta2005\source\repos\core-web-app-docker\core-web-app-docker\bin\debug\netcoreapp3.1\publish"
-dir
-```
+Note: We have build a simple Dot Not Project and zipped the published folder and copied to GitHub. We will directly download it on Linux VM
 
-- Copy the published folder to linux vm which has Docker installed
-
-- Note: We have zipped the published folder and copied to GitHub. We will directly downoad it on Linux VM. Follow below steps for the same
-
-## Mandatory Steps
+## Steps
 ```
 mkdir core-web-app-docker
 cd core-web-app-docker
