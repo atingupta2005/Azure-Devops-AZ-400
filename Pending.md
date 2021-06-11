@@ -13,10 +13,16 @@
 - Give rights to every one on the pipeline
 
 
-Modules Pending to deliver:
-12
-13
-15\3
-15\4
-17
-18
+### Modules Pending to deliver:
+#### Day 3:
+- 12
+- 13
+- 15\3
+- 15\4
+- 17
+- 19
+
+#### Day 4:
+- 20-21
+- 22
+- 23

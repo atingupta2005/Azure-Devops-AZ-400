@@ -37,7 +37,7 @@ $key = '"{0}"' -f $content
     ```
     - Specify storage account name as we specified in Azure CLI task
     - Specify container name - terraform
-    - Key: 2-rg.tfstate
+    - Key: terraform.tfstate
   - Add another task
     - Terraform
     - Command: validate and apply
