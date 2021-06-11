@@ -3,4 +3,4 @@ WORKDIR /app
 COPY  . .
 ENV ASPNETCORE_URLS http://*:80
 EXPOSE 80
-ENTRYPOINT ["dotnet", "docker-app.dll"]
+ENTRYPOINT ["dotnet", "core-web-app-docker.dll"]

@@ -1,6 +1,0 @@
-To log mre detailed diagnotics of the VM
-
-1. Open VM\Diagnostic Settings\Enable Guest Level Monitoring
-2. Click - Configure Performance Counters
-3. Wait for 5 min
-4. Open Storage explorer to review the data in Tables and Blob Containers
