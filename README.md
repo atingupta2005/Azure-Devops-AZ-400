@@ -305,4 +305,4 @@ After completing this module, students will be able to:
 
 **Lab : Managing Technical Debt with SonarQube and Azure DevOps**
 
-**Module 24: Azure AI (Optional)**
+**Module 24: Azure AI**

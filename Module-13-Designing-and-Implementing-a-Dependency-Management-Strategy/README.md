@@ -1,11 +1,12 @@
 # Azure Artifacts
 ## Create a new package
 - Create New Project - Class Library Dot Net Core
+	- https://github.com/atingupta2005/democonsoleatin
 - Name: applibraryjulyeyatin
 - Target Framework: .Net Core 3.1
 - Rename class - app.cs
 
-- Add simple method in class
+- Added simple method in class
 ```
 public void Display()
 {
@@ -17,7 +18,7 @@ public void Display()
 - Right click on project and click Pack
 
 
-## Connect Visual Studio to the Azure Artifacts
+## (Important to be done) Connect Visual Studio to the Azure Artifacts
 - Open Artifacts in Devops Project
 - Click **+ Create feed** - atinapplibrary.shared.ey.june21 and disable upstream sources
 - Click **Connect to feed**
@@ -39,10 +40,11 @@ nuget.exe push -Source "atinapplibrary.shared.ey.june21" -ApiKey az applibraryju
 
 
 ## Create new Project
+- Clone from - https://github.com/atingupta2005/applibraryjulyeyatin.git
 - Project type: Console App (.Net Core)
 - Name: democonsoleatin
 - Open Manage NuGet packages
-- Change package source - atinapplibrary.shared.ey.june21
+- Specify package source - atinapplibrary.shared.ey.june21
 - Install the package we build in last step
 
 ## Use package in our project

@@ -1,24 +1,6 @@
-# Azure Deployment Slots (Optional)
+# Azure Deployment Slots
 
-1. Create New Resource - Azure Web App named - slotapp1000<yourname>
-1. Ensure to chose Standard App Service plan or higher
-1. Create Asp Dot Net Core Web App
-  - https://github.com/atingupta2005/devops-asp-dot-net-core-app-starter
-1. Publish to Azure App Service
-1. Take URL and open in Browser to confirm
-1. Change index page - "Welcome to Production app v2"
-1. Open Web App\Deployment slots\Add Slot - staging
-1. Open the new slot and notice that it has new URL
-1. Open Visual Studio and Publish\New Profile
-1. Chose existing Web App and expand the web app to chose slot - staging
-1. Open the new slot and grab URL and open in web browser
-1. To promote v2 to main URL perform swap of slots
-1. Open the production slot
-1. Click button -Swap
-1. Inspect the Production URL on browser
-
-
-# Steps - with Azure Pipelines
+## With Azure Pipelines
 1. Create New Resource - Azure Web App named - slotapp1000<yourname>
   - ASP.Net Core 3.1 LTS
   - Ensure to chose Standard App Service plan or higher
