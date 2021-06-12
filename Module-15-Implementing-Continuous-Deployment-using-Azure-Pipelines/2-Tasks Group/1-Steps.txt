@@ -1,0 +1,14 @@
+1. In the main menu for the Parts Unlimited project, click Pipelines then click Task groups
+2. You will notice that you don't currently have any task groups defined
+3. In the main menu, click Pipelines then click Releases, and click Edit to open the pipeline that we have been working on.
+4. The Development stage currently has a single task. We will add another task to that stage. Click the View stage tasks link to open the stage editor
+  - You can see that there is currently one task.
+5. Click the + sign to the right of the Agent job line to add a new task
+6. Now that we have two tasks, let's use them to create a task group
+7. Click to select both the tasks and then right-click either task
+8. Click Create task group, then in the Create task group window, set Name. 
+9. Click the Category drop down list to see the available options.
+10. Ensure that Deploy is selected, and click Create.
+11. In the list of tasks, the individual tasks have now disappeared and the new task group appears instead.
+12. Check if there are task groups in view - "Task groups"
+13. We can now use this task group in any pipeline

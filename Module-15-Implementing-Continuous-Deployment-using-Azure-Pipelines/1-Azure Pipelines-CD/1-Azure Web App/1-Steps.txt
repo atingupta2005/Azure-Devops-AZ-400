@@ -1,0 +1,35 @@
+1. Create Azure Web App -> .Net Core 3.1, Standard App Service Plan
+2. Open Devops Project and create a build pipeline
+3. Chose existing ASP.Net Project
+4. Remove testing part
+5. Add the Publish Task
+6. Save and Run
+7. Notice the arfact is produced on the Job
+8. Open Pipelines\Releases\New Pipeline
+9. Chose Azure App Service Deployment
+10. Add artifact from build pipeline
+11. Configure Stage\Stage Name, Chose Azure Web App
+12. Give name to release pipeline and Create Release
+13. Open the release details to see the progress
+14. Once succeeded look the logs
+15. Refresh page to see the deployed app
+
+
+For Continous Delivery Trigger:
+1. Edit release pipeline
+2. Click on Contious deployment trigger on Artifacts window task
+3. Enable
+4. Save and Create Release
+5. Do changes in the code and commit changes
+6. Build pipeline will trigger
+7. Release pipeline will also trigger
+
+For Multiple Stages:
+1. Edit existing release pipeline
+1. Add Stage in Serial for QA then Prod
+1. Create new Azure Web App for Prod
+1. Configure Prod Web App in release pipeline for Prod App
+1. Save and "Create Release"
+1. Do changes in Source Code.
+1. Build and Release pipelines will trigger
+1. Both QA and Prod will be having the release

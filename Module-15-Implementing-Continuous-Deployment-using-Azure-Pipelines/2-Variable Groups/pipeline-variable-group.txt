@@ -1,0 +1,18 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+ 
+trigger:
+- master
+ 
+pool:
+  vmImage: 'ubuntu-latest'
+ 
+variables:
+- group: demogroup
+stages:
+- stage: demostage
+  jobs:
+  - job: Test
+    steps:
+    - script: echo $(secret)
