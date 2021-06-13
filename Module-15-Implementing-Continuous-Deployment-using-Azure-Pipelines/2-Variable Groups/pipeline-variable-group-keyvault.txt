@@ -1,0 +1,23 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- group: demogroup
+stages:
+- stage: demostage
+  jobs:
+  - job: Test
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Test Environment (20c6eec9-2d80-4700-b0f6-4fde579a8783)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az vm create --resource-group az400 --name demovm1 --image win2016datacenter --admin-username atingupta2005 --admin-password $(vmpassword)'

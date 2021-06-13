@@ -1,0 +1,19 @@
+Use ARM template to deploy Azure Web App while doing the release from pipeline
+
+1. Refer main.json and parameters.json
+2. Upload json files to storage accounts and edit the main.json as needed
+  - Also change app service name to make it unique
+3. Create new release pipeline
+4. Pipeline name - template pipeline
+5. Add artifact from build pipeline
+6. Enable CD trigger
+7. Assign stage name - QA
+8. Add task - ARM template deployment and configure it
+9. Specify URL of the template in ARM Template configuration
+- https://devopssaatinmay21.blob.core.windows.net/devops/main.tf
+- https://devopssaatinmay21.blob.core.windows.net/devops/parameters.json
+10. Add another task - Azure App Service Deploy and configure it
+11. Take App Service name from ARM template
+12. Edit the source code and commit
+13. Build and Release pipelines will trigger
+14. Inspect the changes on the Web App URL on browser

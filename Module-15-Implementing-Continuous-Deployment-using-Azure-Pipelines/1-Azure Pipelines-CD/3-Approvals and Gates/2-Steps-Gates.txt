@@ -1,0 +1,16 @@
+Gates are automated process for approval
+
+1. Edit prev release pipeline
+2. Edit Production stage and add predeployment condition (Mouse hover on the Prod stage)
+3. Turn On Gates and add a Deployment Gate -> Enable "Query work Items"
+4. Create and run Query in Work Items - Boards\Queries\Create\Work Item Type=Bug and Status <> Closed
+5. Save query as Shared Query. Name - Active Bugs
+6. Open All Shared Queries section. Open More actions (Click ...\More Actions\Security)
+7. Search for the <project>-Build Service. Read->Allow
+8. Do the same steps for specific query and explicity set Read-> Allow for <project>Build Service
+9. Chose the query in Pipeline. Upper threashhold -> 0 for no active bugs. Also set other values for 2-3 min reattempt
+6. Save and "Create Release"
+7. Edit source code and Commit
+8. Wait for another release and you need to give approval
+9. Can mouse hover on the stage and click Logs
+10. Resolve bugs and then check again if build is success or not.

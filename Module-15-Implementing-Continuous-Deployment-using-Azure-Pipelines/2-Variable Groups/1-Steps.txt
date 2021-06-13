@@ -1,0 +1,20 @@
+To use variables across pipelines
+
+1. Open Pipeline\Library\Variable Group
+2. Name - demogroup
+3. Allow access to all pipelines
+4. Add variables - secret:appvalue. Enable secret lock
+5. Click Save
+6. Create new pipeline
+7. Use the pipeline code  from - pipeline-variable-group.txt
+8. Run the pipeline and inspect the Job logs
+9. Edit Keyvault and add a new secret
+10. Edit Variable Groups and enable - Link Secrets from Azure Key Vault as variables
+11. Configure and specify key vault name
+12. Click Authorize
+13. Open Key Vault, Refresh and check the access policy is added
+14. Open Library and add variable and chose secret from key vault
+15. Save
+16. Edit the pipeline and code from pipeline-variable-group-keyvault.txt to specify resource group name
+17. Save and run pipeline
+18. Inspect Job logs output
