@@ -14,9 +14,9 @@
 
 ## Create Docker Containers
 ```
-docker run --publish 8032:80 -itd --name ubuntu_atin_1 atingupta2005/ubunu_ssh_enabled ubuntu bash
-docker run --publish 8132:80 -itd --name ubuntu_atin_2 atingupta2005/ubunu_ssh_enabled ubuntu bash
-docker run --publish 8232:80 -itd --name ubuntu_atin_3 atingupta2005/ubunu_ssh_enabled ubuntu bash
+docker run --publish 8032:80 -itd --name ubuntu_atin_1 atingupta2005/ubunu_ssh_enabled  bash
+docker run --publish 8132:80 -itd --name ubuntu_atin_2 atingupta2005/ubunu_ssh_enabled  bash
+docker run --publish 8232:80 -itd --name ubuntu_atin_3 atingupta2005/ubunu_ssh_enabled  bash
 
 docker inspect ubuntu_atin_1 | grep IPAddress
 docker inspect ubuntu_atin_2 | grep IPAddress
